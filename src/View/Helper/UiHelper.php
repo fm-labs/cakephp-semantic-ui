@@ -28,6 +28,7 @@ class UiHelper extends Helper
     protected $_defaultConfig = [
         'templates' => [
             'iconBefore' => '<i class="{{icon}} icon"></i>{{content}}',
+            'modal' => '<div class="ui modal"></div>'
         ]
     ];
 
@@ -55,6 +56,11 @@ class UiHelper extends Helper
             unset($options['icon']);
         }
         return $this->Form->postLink($title, $url, $options);
+    }
+
+    public function deleteLink($title, $url = null, array $options = [])
+    {
+        return $this->postLink($title, $url, $options);
     }
 
 }
